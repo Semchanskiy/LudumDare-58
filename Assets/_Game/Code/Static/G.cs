@@ -6,4 +6,5 @@ public static class G
     public static PlayerData playerData;
     public static UI ui;
     public static Main main;
+    public static RunController run;
 }

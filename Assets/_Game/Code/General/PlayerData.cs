@@ -42,26 +42,26 @@ public class PlayerData : MonoBehaviour
         
         musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         SFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
-        //SettingsPanel.SetMixerVolume("Music", _musicVolume);
-        //SettingsPanel.SetMixerVolume("SFX", _SFXVolume);
+        SettingsPanel.SetMixerVolume("Music", _musicVolume);
+        SettingsPanel.SetMixerVolume("SFX", _SFXVolume);
         
-        float volume = Mathf.Lerp(-80f, 0f, SFXVolume);
-
-        if (SFXVolume <= 0.01f)
-            volume = -80f;
-        else
-            volume = Mathf.Log10(SFXVolume) * 20;
-        
-        G.main.audioMixerGroup.audioMixer.SetFloat("SFX", volume);
-        
-        float volume2 = Mathf.Lerp(-80f, 0f, musicVolume);
-
-        if (musicVolume <= 0.01f)
-            volume2 = -80f;
-        else
-            volume2 = Mathf.Log10(musicVolume) * 20;
-        
-        G.main.audioMixerGroup.audioMixer.SetFloat("Music", volume2);
+        // float volume = Mathf.Lerp(-80f, 0f, SFXVolume);
+        //
+        // if (SFXVolume <= 0.01f)
+        //     volume = -80f;
+        // else
+        //     volume = Mathf.Log10(SFXVolume) * 20;
+        //
+        // G.main.audioMixerGroup.audioMixer.SetFloat("SFX", volume);
+        //
+        // float volume2 = Mathf.Lerp(-80f, 0f, musicVolume);
+        //
+        // if (musicVolume <= 0.01f)
+        //     volume2 = -80f;
+        // else
+        //     volume2 = Mathf.Log10(musicVolume) * 20;
+        //
+        // G.main.audioMixerGroup.audioMixer.SetFloat("Music", volume2);
     }
     
 }

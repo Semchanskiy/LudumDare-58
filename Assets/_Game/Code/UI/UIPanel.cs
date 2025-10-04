@@ -23,9 +23,9 @@ public abstract class UIPanel : MonoBehaviour
     {
         _panelRectTransform.DOKill();
         gameObject.SetActive(true);
-        
+        //_panelRectTransform.localScale = Vector3.zero;
         _panelRectTransform.DOScale(originalScale, _animationDuration)
-            .SetEase(showEase)
+            .SetEase(showEase).From(Vector3.zero)
             .OnComplete(() => {
                 //Debug.Log("Panel shower "+gameObject.name+" completely");
             });
@@ -41,5 +41,11 @@ public abstract class UIPanel : MonoBehaviour
                 gameObject.SetActive(false);
                 //Debug.Log("Panel hidden "+gameObject.name+" completely");
             });
+    }
+
+    public void FastClose()
+    {
+        _panelRectTransform.DOKill();
+        gameObject.SetActive(false);
     }
 }
