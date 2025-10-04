@@ -1,13 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteChanger: MonoBehaviour
+public abstract class SpriteChanger : MonoBehaviour
 {
     protected bool IsTic = false;
-    public List<Transform> _childrens;
+    protected List<Transform> _childrens;
     protected Transform _currentActiveChildren;
-    
+
+    protected void Awake()
+    {
+        _childrens = new List<Transform>();
+        foreach (Transform child in transform)
+        {
+            _childrens.Add(child);
+        }
+    }
+
     protected virtual void Start()
     {
         
