@@ -42,4 +42,10 @@ public abstract class UIPanel : MonoBehaviour
                 //Debug.Log("Panel hidden "+gameObject.name+" completely");
             });
     }
+
+    public void FastClose()
+    {
+        _panelRectTransform.DOKill();
+        gameObject.SetActive(false);
+    }
 }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuPanel : UIPanel
@@ -13,6 +14,10 @@ public class MenuPanel : UIPanel
         {
             G.ui.settingsPanel.Show();
         });
+        _startButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("Game");
+        });
     }
 
     private void OnDisable()
@@ -20,6 +25,10 @@ public class MenuPanel : UIPanel
         _settingButton.onClick.RemoveListener(() =>
         {
             G.ui.settingsPanel.Show();
+        });
+        _startButton.onClick.RemoveListener(() =>
+        {
+            SceneManager.LoadScene("Game");
         });
     }
 }
