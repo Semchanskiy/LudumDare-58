@@ -21,7 +21,6 @@ public class RunController : MonoBehaviour
         set
         {
             _countThings = value;
-            Debug.Log(_countThings);
             OnChangeCountThings?.Invoke(_countThings);
         }
     }

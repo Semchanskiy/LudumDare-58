@@ -54,12 +54,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003224036414628460, guid: 9baabe7805bfb574a8a6ab85bc4078f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.079
+      value: -0.311
       objectReference: {fileID: 0}
     - target: {fileID: 6776964874559543277, guid: 9baabe7805bfb574a8a6ab85bc4078f7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2378300262763691750, guid: 09aee7da7c59b844483a186f4c216bf8, type: 3}
+      objectReference: {fileID: -2226108190149091594, guid: 1d6441659ee86fc478a0c093cb0a69b8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
