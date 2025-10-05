@@ -280,6 +280,8 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 5675403117262720724}
   animator: {fileID: 8305781463520618087}
+  isHandsStageEnabled: 0
+  handsEnemyPrefab: {fileID: 2061188235018500922, guid: 48f4ccff7bff6c14892cc20ea59618c1, type: 3}
 --- !u!58 &959917721113089427
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -342,4 +344,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
