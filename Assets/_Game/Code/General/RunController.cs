@@ -37,7 +37,7 @@ public class RunController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            G.run.countThings = 1;
+            G.run.countThings ++;
         }
         if (IsPlay)
         {
