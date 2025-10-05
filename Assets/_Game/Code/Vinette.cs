@@ -71,19 +71,25 @@ public class Vinette : MonoBehaviour
     protected virtual IEnumerator ThirdThing()
     {
         yield return IncreaseVignetteIntensity( 1.6f, 0.4f,_blackColor);
-        yield return IncreaseVignetteIntensity( 1f, 1f,_redColor);
+        yield return IncreaseVignetteIntensity( 1f, 1f,_blackColor);
         yield return null;
     }
     protected virtual IEnumerator FourthThing()
     {
+        yield return IncreaseVignetteIntensity( 1.6f, 0.4f,_blackColor);
+        yield return IncreaseVignetteIntensity( 1f, 2f,_blackColor);
         yield return null;
     }
     protected virtual IEnumerator FifthThing()
     {
+        yield return IncreaseVignetteIntensity( 1.6f, 0.4f,_blackColor);
+        yield return IncreaseVignetteIntensity( 1.2f, 3f,_redColor);
         yield return null;
     }
     protected virtual IEnumerator SixthThing()
     {
+        yield return IncreaseVignetteIntensity( 1.6f, 0.4f,_blackColor);
+        yield return IncreaseVignetteIntensity( 1.3f, 4f,_redColor);
         yield return null;
     }
     

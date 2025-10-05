@@ -45,12 +45,31 @@ public class ForestTree : SpriteChanger
             EnableChildrenForIndex(2);
         }
 
+        while (G.run.countThings==3)
+        {
+            if (Random.Range(0, 100) < 5)
+            {
+                yield return GlitchChild(3);
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
+
         yield return null;
     }
     
     protected override IEnumerator FourthThing()
     {
         yield return base.FourthThing();
+        while (G.run.countThings==4)
+        {
+            if (Random.Range(0, 100) < 5)
+            {
+                yield return GlitchChild(3);
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
         yield return null;
     }
     
@@ -69,6 +88,17 @@ public class ForestTree : SpriteChanger
         {
             EnableChildrenForIndex(3);
         }
+        
+        
+        while (G.run.countThings==5)
+        {
+            if (Random.Range(0, 100) < 20)
+            {
+                yield return GlitchChild(3);
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
         yield return null;
     }
     protected override IEnumerator SixthThing()
@@ -81,6 +111,16 @@ public class ForestTree : SpriteChanger
         if (Random.Range(0, 100) < 35)
         {
             EnableChildrenForIndex(3);
+        }
+        
+        while (G.run.countThings==5)
+        {
+            if (Random.Range(0, 100) < 40)
+            {
+                yield return GlitchChild(3);
+            }
+
+            yield return new WaitForSeconds(1f);
         }
         yield return null;
     }

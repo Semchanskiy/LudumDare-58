@@ -210,7 +210,7 @@ MonoBehaviour:
     m_Value: 0
   response:
     m_OverrideState: 1
-    m_Value: 0.679
+    m_Value: 0.736
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: fba20a62c09631140a7b9e3a8046fb6b, type: 3}
@@ -381,7 +381,7 @@ MonoBehaviour:
     m_Value: 30
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.925
   highQualitySampling:
     m_OverrideState: 1
     m_Value: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
     m_Value: 0
   clamp:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.073
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

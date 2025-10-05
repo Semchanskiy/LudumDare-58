@@ -194,7 +194,7 @@ class PlayerController : SpriteChanger
 			{
 				if (G.audio)
 				{
-					G.audio.PlaySFX("Step", 1, Random.Range(0.8f, 1.2f));
+					G.audio.PlaySFX("Step", 0.6f, Random.Range(0.9f, 1.1f));
 				}
 				yield return new WaitForSeconds(StepTime);
 			}

@@ -11,6 +11,10 @@ public class Stone : SpriteChanger
     protected override IEnumerator SecondThing()
     {
         yield return base.SecondThing();
+        if (Random.Range(0, 100) < 20)
+        {
+            EnableChildrenForIndex(1);
+        }
         yield return null;
     }
     
@@ -19,7 +23,7 @@ public class Stone : SpriteChanger
         yield return base.ThirdThing();
         if (Random.Range(0, 100) < 20)
         {
-            EnableChildrenForIndex(1);
+            EnableChildrenForIndex(2);
         }
         yield return null;
     }
@@ -35,13 +39,26 @@ public class Stone : SpriteChanger
         yield return base.FifthThing();
         if (Random.Range(0, 100) < 40)
         {
-            EnableChildrenForIndex(1);
+            EnableChildrenForIndex(2);
         }
         yield return null;
     }
     protected override IEnumerator SixthThing()
     {
         yield return base.SixthThing();
+        if (Random.Range(0, 100) < 100)
+        {
+            yield return GlitchChild(1);
+        }
+        while (G.run.countThings==6)
+        {
+            if (Random.Range(0, 100) < 40)
+            {
+                yield return GlitchChild(2);
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
         yield return null;
     }
 
@@ -50,7 +67,7 @@ public class Stone : SpriteChanger
         yield return base.SeventhThing();
         if (Random.Range(0, 100) < 60)
         {
-            EnableChildrenForIndex(1);
+            EnableChildrenForIndex(2);
         }
         yield return null;
     }
