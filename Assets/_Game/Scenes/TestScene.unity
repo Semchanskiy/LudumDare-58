@@ -354,10 +354,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2342897133248727764, guid: 06a3e1e6ba2beab4f9ad4fed6c3e5b1d, type: 3}
-      propertyPath: handsEnemyPrefab
-      value: 
-      objectReference: {fileID: 2057255797443079509, guid: 977e70060b6c4af40b44626e116d76a5, type: 3}
-    - target: {fileID: 2342897133248727764, guid: 06a3e1e6ba2beab4f9ad4fed6c3e5b1d, type: 3}
       propertyPath: isHandsStageEnabled
       value: 1
       objectReference: {fileID: 0}

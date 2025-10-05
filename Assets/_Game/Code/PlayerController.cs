@@ -1,8 +1,7 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
-class PlayerController : MonoBehaviour
+class PlayerController : SpriteChanger
 {
 
 	[SerializeField] float speed;
@@ -17,8 +16,9 @@ class PlayerController : MonoBehaviour
 	bool isEnableHandsSpawning;
 	bool isMovementEnabled = true;
 
-	void Start()
+	protected override void Start()
 	{
+		base.Start();
 		if (G.run)
 		{
 			G.run.OnChangeCountThings += (stage) =>
@@ -126,5 +126,41 @@ class PlayerController : MonoBehaviour
 			}
 		}
 	}
+
+	protected override IEnumerator ZeroThing()
+    {
+        yield return null;
+    }
+
+    protected override IEnumerator FirstThing()
+    {
+        yield return null;
+    }
+    
+    protected override IEnumerator SecondThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator ThirdThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator FourthThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator FifthThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator SixthThing()
+    {
+        yield return null;
+    }
+    
+    protected override IEnumerator SeventhThing()
+    {
+        yield return null;
+    }
 
 }
