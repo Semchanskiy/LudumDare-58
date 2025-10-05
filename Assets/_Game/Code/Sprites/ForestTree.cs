@@ -27,7 +27,7 @@ public class ForestTree : SpriteChanger
         yield return base.SecondThing();
         if (Random.Range(0, 100) < 30)
         {
-            EnableChildrenForIndex(2);
+            EnableChildrenForIndex(1);
         }
 
         yield return null;
@@ -38,11 +38,11 @@ public class ForestTree : SpriteChanger
         yield return base.ThirdThing();
         if (Random.Range(0, 100) < 50)
         {
-            EnableChildrenForIndex(2);
+            EnableChildrenForIndex(1);
         }
         if (Random.Range(0, 100) < 15)
         {
-            EnableChildrenForIndex(3);
+            EnableChildrenForIndex(2);
         }
 
         yield return null;
@@ -59,15 +59,15 @@ public class ForestTree : SpriteChanger
         yield return base.FifthThing();
         if (Random.Range(0, 100) < 90)
         {
-            EnableChildrenForIndex(2);
+            EnableChildrenForIndex(1);
         }
         if (Random.Range(0, 100) < 75)
         {
-            EnableChildrenForIndex(3);
+            EnableChildrenForIndex(2);
         }
         if (Random.Range(0, 100) < 14)
         {
-            EnableChildrenForIndex(4);
+            EnableChildrenForIndex(3);
         }
         yield return null;
     }
@@ -76,11 +76,11 @@ public class ForestTree : SpriteChanger
         yield return base.SixthThing();
         if (Random.Range(0, 100) < 100)
         {
-            EnableChildrenForIndex(3);
+            EnableChildrenForIndex(2);
         }
         if (Random.Range(0, 100) < 35)
         {
-            EnableChildrenForIndex(4);
+            EnableChildrenForIndex(3);
         }
         yield return null;
     }
