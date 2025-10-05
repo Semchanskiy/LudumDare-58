@@ -188,7 +188,10 @@ class PlayerController : SpriteChanger
 	    {
 		    if (direction.sqrMagnitude > 0.01f)
 			{
-				G.audio.PlaySFX("Step", 1, Random.Range(0.8f, 1.2f));
+				if (G.audio)
+				{
+					G.audio.PlaySFX("Step", 1, Random.Range(0.8f, 1.2f));
+				}
 				yield return new WaitForSeconds(StepTime);
 			}
 		    yield return new WaitForSeconds(0.1f);
