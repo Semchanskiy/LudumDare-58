@@ -62,7 +62,10 @@ Shader "Unlit/WindShader"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                return tex2D(_MainTex, i.uv) * _Color;
+                fixed4 col = tex2D(_MainTex, i.uv) * _Color;
+                // Preserve transparency
+                clip(col.a - 0.001);         // Discard nearly-invisible pixels
+                return col;
             }
             ENDCG
         }
