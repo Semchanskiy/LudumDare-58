@@ -52,7 +52,7 @@ public abstract class SpriteChanger : MonoBehaviour
         };
     }
 
-    protected void ChangeThings(int i)
+    protected virtual void ChangeThings(int i)
     {
         StopAllCoroutines();
         StartCoroutine(ChangeThingsInvoke());
