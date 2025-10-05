@@ -3,40 +3,42 @@ using UnityEngine;
 
 public class Road : SpriteChanger
 {
-    protected virtual IEnumerator ZeroThing()
+    protected override IEnumerator ZeroThing()
     {
         yield return null;
     }
 
-    protected virtual IEnumerator FirstThing()
+    protected override IEnumerator FirstThing()
     {
         yield return null;
     }
     
-    protected virtual IEnumerator SecondThing()
+    protected override IEnumerator SecondThing()
     {
+        yield return base.SecondThing();
         yield return null;
     }
-    protected virtual IEnumerator ThirdThing()
+    protected override IEnumerator ThirdThing()
     {
         yield return base.ThirdThing();
     }
-    protected virtual IEnumerator FourthThing()
+    protected override IEnumerator FourthThing()
     {
         yield return base.FourthThing();
     }
-    protected virtual IEnumerator FifthThing()
+    protected override IEnumerator FifthThing()
     {
         yield return base.FifthThing();
+        
         EnableChildrenForIndex(1);
         yield return null;
     }
-    protected virtual IEnumerator SixthThing()
+    protected override IEnumerator SixthThing()
     {
         yield return null;
     }
     
-    protected virtual IEnumerator SeventhThing()
+    protected override IEnumerator SeventhThing()
     {
         yield return null;
     }
