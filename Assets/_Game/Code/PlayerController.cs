@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
-class PlayerController : MonoBehaviour
+class PlayerController : SpriteChanger
 {
 
 	[SerializeField] float speed;
@@ -8,9 +9,83 @@ class PlayerController : MonoBehaviour
 	Vector2 targetDirection;
 	[SerializeField] Rigidbody2D rb;
 	[SerializeField] Animator animator;
+	[SerializeField] bool isHandsStageEnabled;
+	Coroutine handsEnemyTimer;
+	[SerializeField] GameObject handsEnemyPrefab;
+	GameObject handsEnemy;
+	bool isEnableHandsSpawning;
+	bool isMovementEnabled = true;
+
+	protected override void Start()
+	{
+		base.Start();
+		if (G.run)
+		{
+			G.run.OnChangeCountThings += (stage) =>
+			{
+				isHandsStageEnabled = stage >= 3;
+			};
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		if (collider.TryGetComponent(out EnemyGhost ghost))
+		{
+			isMovementEnabled = false;
+			Debug.Log("Game over in 2 sec");
+		}
+	}
+
+	public void CatchByHands()
+	{
+		isMovementEnabled = false;
+		Debug.Log("Game over in 2 sec");
+	}
+
+	IEnumerator EnableHandsEnemyTimer()
+	{
+		yield return new WaitForSeconds(5f);
+		isEnableHandsSpawning = true;
+		handsEnemyTimer = null;
+	}
+
+	void ClearHandsTimer()
+	{
+		isEnableHandsSpawning = false;
+		if (handsEnemyTimer != null)
+		{
+			StopCoroutine(handsEnemyTimer);
+			handsEnemyTimer = null;
+		}
+	}
+
+	void StarHandsTimer()
+	{
+		if (handsEnemy)
+		{
+			return;
+		}
+
+		if (isEnableHandsSpawning && handsEnemyPrefab)
+		{
+			handsEnemy = Instantiate(handsEnemyPrefab, rb.transform.position, Quaternion.identity);
+			return;
+		}
+
+		if (handsEnemyTimer == null)
+		{
+			handsEnemyTimer = StartCoroutine(EnableHandsEnemyTimer());
+		}
+	}
 
 	void Update()
 	{
+		if (!isMovementEnabled)
+		{
+			direction = Vector2.zero;
+			return;
+		}
 		direction = new Vector2(
 			Input.GetAxisRaw("Horizontal"),
 			Input.GetAxisRaw("Vertical")
@@ -29,16 +104,63 @@ class PlayerController : MonoBehaviour
 		if (targetDirection.sqrMagnitude > 0.01f)
 		{
 			animator.Play("PlayerWalk");
-			if (targetDirection.x >= 0) {
+			if (targetDirection.x >= 0)
+			{
 				transform.localScale = new Vector3(-1, 1, 1);
-			} else {
+			}
+			else
+			{
 				transform.localScale = new Vector3(1, 1, 1);
+			}
+			if (isHandsStageEnabled)
+			{
+				ClearHandsTimer();
 			}
 		}
 		else
 		{
 			animator.Play("PlayerIdle");
+			if (isHandsStageEnabled)
+			{
+				StarHandsTimer();
+			}
 		}
 	}
+
+	protected override IEnumerator ZeroThing()
+    {
+        yield return null;
+    }
+
+    protected override IEnumerator FirstThing()
+    {
+        yield return null;
+    }
+    
+    protected override IEnumerator SecondThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator ThirdThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator FourthThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator FifthThing()
+    {
+        yield return null;
+    }
+    protected override IEnumerator SixthThing()
+    {
+        yield return null;
+    }
+    
+    protected override IEnumerator SeventhThing()
+    {
+        yield return null;
+    }
 
 }

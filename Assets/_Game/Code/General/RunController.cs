@@ -10,6 +10,7 @@ public class RunController : MonoBehaviour
     
     public Action<int> OnChangeCountThings;
     private int _countThings;
+    public GameObject Player;
 
     public int countThings
     {
@@ -26,7 +27,10 @@ public class RunController : MonoBehaviour
     private void Awake()
     {
         G.run = this;
-        G.ui.menuPanel.FastClose();
+        if (G.ui)
+        {
+            G.ui.menuPanel.FastClose();
+        }
     }
     void Start()
     {
