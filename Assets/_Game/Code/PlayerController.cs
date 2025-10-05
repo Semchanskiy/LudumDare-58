@@ -12,8 +12,6 @@ class PlayerController : SpriteChanger
 	[SerializeField] Animator animator;
 	[SerializeField] bool isHandsStageEnabled;
 	Coroutine handsEnemyTimer;
-	[SerializeField] GameObject handsEnemyPrefab;
-	GameObject handsEnemy;
 	bool isEnableHandsSpawning;
 	bool isMovementEnabled = true;
 	private float StepTime = 0.25f;
@@ -77,14 +75,14 @@ class PlayerController : SpriteChanger
 
 	void StarHandsTimer()
 	{
-		if (handsEnemy)
+		if (G.enemies.IsHandsEnemySpawned())
 		{
 			return;
 		}
 		
-		if (isEnableHandsSpawning && handsEnemyPrefab)
+		if (isEnableHandsSpawning)
 		{
-			handsEnemy = Instantiate(handsEnemyPrefab, rb.transform.position, Quaternion.identity);
+			G.enemies.CreateEnemyHands();
 			return;
 		}
 
