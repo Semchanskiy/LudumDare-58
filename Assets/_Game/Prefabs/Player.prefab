@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1384743121141565569}
   - component: {fileID: 4673895478063884315}
   m_Layer: 0
-  m_Name: SpriteBox
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1384743121141565569
 Transform:
   m_ObjectHideFlags: 0
@@ -26,9 +26,9 @@ Transform:
   m_GameObject: {fileID: 1778915493106513682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.005, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6159849704872787041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89fb04a43f791c645bf76bfde6d5f5f6, type: 3}
   m_Color: {r: 1, g: 0.91216755, b: 0.2688679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 3660932849675080452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7642138713928280825}
   - component: {fileID: 6403477364827306170}
   - component: {fileID: 8305781463520618087}
+  - component: {fileID: 5221676957727626241}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -229,6 +230,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5221676957727626241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8054336776098068506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d8e7b178e44b64d9d247bb1ea3e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 0
+  orderMultiplier: -5
+  updateInRealTime: 1
+  updateFrequency: 0.1
+  useOrderLimits: 1
+  minOrder: -1000
+  maxOrder: 1000
 --- !u!1 &8591980228889086156
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +300,7 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 5675403117262720724}
   animator: {fileID: 8305781463520618087}
-  isHandsStageEnabled: 0
+  isHandsStageEnabled: 1
   handsEnemyPrefab: {fileID: 2057255797443079509, guid: 977e70060b6c4af40b44626e116d76a5, type: 3}
 --- !u!58 &959917721113089427
 CircleCollider2D:

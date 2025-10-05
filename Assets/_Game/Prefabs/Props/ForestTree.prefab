@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 2926249681110144969}
   - component: {fileID: 9142645993181185969}
   - component: {fileID: 2368281017293600565}
+  - component: {fileID: 8751646264097759460}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -149,6 +150,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf71a5528ae5ca49acc56a0b4df37eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8751646264097759460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034384814351513509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d8e7b178e44b64d9d247bb1ea3e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 0
+  orderMultiplier: -5
+  updateInRealTime: 0
+  updateFrequency: 0.1
+  useOrderLimits: 0
+  minOrder: -1000
+  maxOrder: 1000
 --- !u!1 &2256973975911469673
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +180,7 @@ GameObject:
   - component: {fileID: 4355068512448117595}
   - component: {fileID: 7252382009995753380}
   - component: {fileID: 2611781409397005539}
+  - component: {fileID: 8061789715671106975}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -249,6 +270,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf71a5528ae5ca49acc56a0b4df37eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8061789715671106975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256973975911469673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d8e7b178e44b64d9d247bb1ea3e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 0
+  orderMultiplier: -5
+  updateInRealTime: 0
+  updateFrequency: 0.1
+  useOrderLimits: 0
+  minOrder: -1000
+  maxOrder: 1000
 --- !u!1 &6307670131105713817
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +300,7 @@ GameObject:
   - component: {fileID: 6742410626253488508}
   - component: {fileID: 9113042924543905809}
   - component: {fileID: 7223051261891481605}
+  - component: {fileID: 7917388184796485230}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -349,6 +390,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf71a5528ae5ca49acc56a0b4df37eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7917388184796485230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307670131105713817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d8e7b178e44b64d9d247bb1ea3e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 0
+  orderMultiplier: -5
+  updateInRealTime: 0
+  updateFrequency: 0.1
+  useOrderLimits: 0
+  minOrder: -1000
+  maxOrder: 1000
 --- !u!1 &8153646214762859904
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +420,7 @@ GameObject:
   - component: {fileID: 4819158529229608071}
   - component: {fileID: 8537758631511814015}
   - component: {fileID: 1391913358643183876}
+  - component: {fileID: 6904947299350116686}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -449,6 +510,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf71a5528ae5ca49acc56a0b4df37eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6904947299350116686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153646214762859904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d8e7b178e44b64d9d247bb1ea3e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrder: 0
+  orderMultiplier: -5
+  updateInRealTime: 0
+  updateFrequency: 0.1
+  useOrderLimits: 0
+  minOrder: -1000
+  maxOrder: 1000
 --- !u!1 &8580194804832058208
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +555,7 @@ Transform:
   m_GameObject: {fileID: 8580194804832058208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -1.819, z: 0}
+  m_LocalPosition: {x: -0.15, y: -0.06, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
