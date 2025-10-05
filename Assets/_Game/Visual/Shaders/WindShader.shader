@@ -7,7 +7,7 @@ Shader "Unlit/WindShader"
         _WindStrength ("Wind Strength", Range(0,0.5)) = 0.1
         _WindSpeed ("Wind Speed", Range(0,5)) = 1
         _WindFrequency ("Wind Frequency", Range(0,5)) = 1
-        _PivotY ("Pivot Height", Float) = 0     // Usually 0 if pivot is at bottom
+        //_PivotY ("Pivot Height", Float) = 1     // Usually 0 if pivot is at bottom
     }
 
     SubShader

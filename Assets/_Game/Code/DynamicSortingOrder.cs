@@ -18,8 +18,10 @@ public class DynamicSortingOrder : MonoBehaviour
     public int minOrder = -1000;
     public int maxOrder = 1000;
     
+    
     void Start()
     {
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateOrder();
         
@@ -66,6 +68,7 @@ public class DynamicSortingOrder : MonoBehaviour
         }
         
         spriteRenderer.sortingOrder = newOrder;
+        
     }
     
     // Ручное обновление сортировки
