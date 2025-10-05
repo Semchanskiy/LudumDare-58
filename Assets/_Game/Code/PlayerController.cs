@@ -68,6 +68,12 @@ class PlayerController : SpriteChanger
 		}
 	}
 
+	protected override void ChangeThings(int i)
+    {
+        base.ChangeThings(i);
+		StartCoroutine(StepSoundLoop());
+    }
+
 	void StarHandsTimer()
 	{
 		if (handsEnemy)
@@ -181,10 +187,10 @@ class PlayerController : SpriteChanger
 	    while (StepTime>-5)
 	    {
 		    if (direction.sqrMagnitude > 0.01f)
-		    {
-			    G.audio.PlaySFX("Step",1,Random.Range(0.8f,1.2f));
-			    yield return new WaitForSeconds(StepTime);
-		    }
+			{
+				G.audio.PlaySFX("Step", 1, Random.Range(0.8f, 1.2f));
+				yield return new WaitForSeconds(StepTime);
+			}
 		    yield return new WaitForSeconds(0.1f);
 	    }
     }
