@@ -7,6 +7,7 @@ class PlayerController : MonoBehaviour
 	Vector2 direction;
 	Vector2 targetDirection;
 	[SerializeField] Rigidbody2D rb;
+	[SerializeField] Animator animator;
 
 	void Update()
 	{
@@ -24,6 +25,20 @@ class PlayerController : MonoBehaviour
 
 		// без плавности
 		// rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * direction);
+
+		if (targetDirection.sqrMagnitude > 0.01f)
+		{
+			animator.Play("PlayerWalk");
+			if (targetDirection.x >= 0) {
+				transform.localScale = new Vector3(-1, 1, 1);
+			} else {
+				transform.localScale = new Vector3(1, 1, 1);
+			}
+		}
+		else
+		{
+			animator.Play("PlayerIdle");
+		}
 	}
 
 }
