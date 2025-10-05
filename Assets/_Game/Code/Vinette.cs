@@ -37,7 +37,6 @@ public class Vinette : MonoBehaviour
 
     protected virtual IEnumerator ChangeThingsInvoke()
     {
-        Debug.Log(G.run.countThings);
         switch (G.run.countThings)
         {
             case 0: yield return ZeroThing(); break;

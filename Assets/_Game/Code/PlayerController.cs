@@ -15,9 +15,12 @@ class PlayerController : SpriteChanger
 	GameObject handsEnemy;
 	bool isEnableHandsSpawning;
 	bool isMovementEnabled = true;
+	private float StepTime = 0.25f;
+	private float StepTimer = 0;
 
 	protected override void Start()
 	{
+		StartCoroutine(StepSoundLoop());
 		base.Start();
 		if (G.run)
 		{
@@ -34,6 +37,11 @@ class PlayerController : SpriteChanger
 		{
 			isMovementEnabled = false;
 			Debug.Log("Game over in 2 sec");
+		}
+		else if(collider.TryGetComponent(out Item item))
+		{
+			G.run.CollectItem();
+			item.Kill();
 		}
 	}
 
@@ -81,6 +89,8 @@ class PlayerController : SpriteChanger
 
 	void Update()
 	{
+		
+
 		if (!isMovementEnabled)
 		{
 			direction = Vector2.zero;
@@ -90,6 +100,9 @@ class PlayerController : SpriteChanger
 			Input.GetAxisRaw("Horizontal"),
 			Input.GetAxisRaw("Vertical")
 		).normalized;
+		
+		
+		
 	}
 
 	void FixedUpdate()
@@ -161,6 +174,19 @@ class PlayerController : SpriteChanger
     protected override IEnumerator SeventhThing()
     {
         yield return null;
+    }
+
+    private IEnumerator StepSoundLoop()
+    {
+	    while (StepTime>-5)
+	    {
+		    if (direction.sqrMagnitude > 0.01f)
+		    {
+			    G.audio.PlaySFX("Step",1,Random.Range(0.8f,1.2f));
+			    yield return new WaitForSeconds(StepTime);
+		    }
+		    yield return new WaitForSeconds(0.1f);
+	    }
     }
 
 }

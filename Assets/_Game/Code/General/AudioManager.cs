@@ -56,7 +56,7 @@ public class AudioManager : MonoBehaviour
         }
 
         var clip = clips[Random.Range(0, clips.Length)];
-
+        
         AudioSource source = SfxSource[0];
         source.PlayOneShot(clip, volume);
         source.pitch = speed;

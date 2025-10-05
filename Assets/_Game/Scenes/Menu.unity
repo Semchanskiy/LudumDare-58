@@ -3509,7 +3509,10 @@ MonoBehaviour:
   - {fileID: 1684947812}
   - {fileID: 1509654193}
   - {fileID: 268164015}
-  SfxTaggedClips: []
+  SfxTaggedClips:
+  - tag: Step
+    clips:
+    - {fileID: 8300000, guid: a330e12ecd3c75c4aa18f85d7598df00, type: 3}
   MusicTaggedClips: []
 --- !u!1 &1062599017
 GameObject:

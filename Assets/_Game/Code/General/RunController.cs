@@ -21,6 +21,7 @@ public class RunController : MonoBehaviour
         set
         {
             _countThings = value;
+            Debug.Log(_countThings);
             OnChangeCountThings?.Invoke(_countThings);
         }
     }
@@ -39,10 +40,10 @@ public class RunController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            G.run.countThings ++;
-        }
+        // if (Input.GetKeyDown(KeyCode.A))
+        // {
+        //     G.run.countThings ++;
+        // }
         if (IsPlay)
         {
             Timer += Time.deltaTime;
@@ -52,5 +53,10 @@ public class RunController : MonoBehaviour
                 OnTic?.Invoke();
             }
         }
+    }
+
+    public void CollectItem()
+    {
+        countThings++;
     }
 }

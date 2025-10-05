@@ -5,18 +5,18 @@ public class DynamicSortingOrder : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
     [Header("Основные настройки")]
-    public int baseOrder = 0;
-    public float orderMultiplier = -100f;
+    [HideInInspector]public int baseOrder = 0;
+    [HideInInspector]public float orderMultiplier = -5f;
     public bool updateInRealTime = true;
     
     [Header("Оптимизация")]
-    public float updateFrequency = 0.1f; // Частота обновления в секундах
+    [HideInInspector]public float updateFrequency = 0.1f; // Частота обновления в секундах
     private float timer;
     
     [Header("Ограничения")]
-    public bool useOrderLimits = false;
-    public int minOrder = -1000;
-    public int maxOrder = 1000;
+    [HideInInspector]public bool useOrderLimits = false;
+    [HideInInspector]public int minOrder = -1000;
+    [HideInInspector]public int maxOrder = 1000;
     
     
     void Start()
@@ -78,12 +78,12 @@ public class DynamicSortingOrder : MonoBehaviour
     }
     
     // Для отладки в редакторе
-    void OnDrawGizmosSelected()
-    {
-        if (spriteRenderer != null)
-        {
-            int currentOrder = baseOrder + Mathf.RoundToInt(transform.position.y * orderMultiplier);
-            Debug.Log($"Y позиция: {transform.position.y}, Sorting Order: {currentOrder}");
-        }
-    }
+    // void OnDrawGizmosSelected()
+    // {
+    //     if (spriteRenderer != null)
+    //     {
+    //         int currentOrder = baseOrder + Mathf.RoundToInt(transform.position.y * orderMultiplier);
+    //         Debug.Log($"Y позиция: {transform.position.y}, Sorting Order: {currentOrder}");
+    //     }
+    // }
 }
