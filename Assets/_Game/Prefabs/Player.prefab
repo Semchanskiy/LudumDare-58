@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 89fb04a43f791c645bf76bfde6d5f5f6, type: 3}
   m_Color: {r: 1, g: 0.91216755, b: 0.2688679, a: 1}
   m_FlipX: 0
@@ -300,8 +300,9 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 5675403117262720724}
   animator: {fileID: 8305781463520618087}
-  isHandsStageEnabled: 1
-  handsEnemyPrefab: {fileID: 2057255797443079509, guid: 977e70060b6c4af40b44626e116d76a5, type: 3}
+  isHandsStageEnabled: 0
+  shadowSprite: {fileID: 4673895478063884315}
+  playerSprite: {fileID: 6403477364827306170}
 --- !u!58 &959917721113089427
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 class PlayerController : SpriteChanger
@@ -11,11 +10,12 @@ class PlayerController : SpriteChanger
 	[SerializeField] Rigidbody2D rb;
 	[SerializeField] Animator animator;
 	[SerializeField] bool isHandsStageEnabled;
+	[SerializeField] SpriteRenderer shadowSprite;
+	[SerializeField] SpriteRenderer playerSprite;
 	Coroutine handsEnemyTimer;
 	bool isEnableHandsSpawning;
 	bool isMovementEnabled = true;
 	private float StepTime = 0.25f;
-	private float StepTimer = 0;
 
 	protected override void Start()
 	{
@@ -37,7 +37,12 @@ class PlayerController : SpriteChanger
 			isMovementEnabled = false;
 			Debug.Log("Game over in 2 sec");
 		}
-		else if(collider.TryGetComponent(out Item item))
+		else if (collider.TryGetComponent(out EnemyMeat meat))
+		{
+			isMovementEnabled = false;
+			Debug.Log("Game over in 2 sec");
+		}
+		else if (collider.TryGetComponent(out Item item))
 		{
 			G.run.CollectItem();
 			item.Kill();
@@ -94,8 +99,6 @@ class PlayerController : SpriteChanger
 
 	void Update()
 	{
-		
-
 		if (!isMovementEnabled)
 		{
 			direction = Vector2.zero;
@@ -105,9 +108,11 @@ class PlayerController : SpriteChanger
 			Input.GetAxisRaw("Horizontal"),
 			Input.GetAxisRaw("Vertical")
 		).normalized;
-		
-		
-		
+	}
+
+	void LateUpdate()
+	{
+		shadowSprite.sortingOrder = playerSprite.sortingOrder - 1;
 	}
 
 	void FixedUpdate()
