@@ -11,7 +11,7 @@ public class LosePanel : UIPanel
         //Time.timeScale = 0;
         _restartButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(SceneManager.sceneCount);
+            SceneManager.LoadScene("Game");
         });
     }
     
@@ -21,7 +21,7 @@ public class LosePanel : UIPanel
         
         _restartButton.onClick.RemoveListener(() =>
         {
-            SceneManager.LoadScene(SceneManager.sceneCount);
+            SceneManager.LoadScene("Game");
         });
     }
 }

@@ -10,7 +10,7 @@ public abstract class SpriteChanger : MonoBehaviour
     protected List<ChildrenObject> _childrens;
     protected ChildrenObject _currentActiveChildren;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         _childrens = new List<ChildrenObject>();
         foreach (Transform child in transform)

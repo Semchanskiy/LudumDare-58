@@ -12,6 +12,8 @@ public class DebugScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _text.SetText(G.run.countThings.ToString());
+        float fps = 1.0f / Time.smoothDeltaTime;
+        _text.SetText( Mathf.RoundToInt(fps).ToString());
+        //_text.SetText((1f/Time.deltaTime).ToString());
     }
 }

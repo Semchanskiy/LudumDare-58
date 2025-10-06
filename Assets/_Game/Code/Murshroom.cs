@@ -16,9 +16,9 @@ public class Murshroom : SpriteChanger
     protected override IEnumerator SecondThing()
     {
         yield return base.SecondThing();
-        if (Random.Range(0, 100) < 30)
+        if (Random.Range(0, 100) < 20)
         {
-            EnableChildrenForIndex(1);
+            EnableChildrenForIndex(2);
         }
 
         yield return null;
@@ -27,9 +27,13 @@ public class Murshroom : SpriteChanger
     protected override IEnumerator ThirdThing()
     {
         yield return base.ThirdThing();
-        if (Random.Range(0, 100) < 50)
+        if (Random.Range(0, 100) < 100)
         {
             EnableChildrenForIndex(1);
+        }
+        if (Random.Range(0, 100) < 50)
+        {
+            EnableChildrenForIndex(2);
         }
 
         while (G.run.countThings==3)
@@ -48,26 +52,13 @@ public class Murshroom : SpriteChanger
     protected override IEnumerator FourthThing()
     {
         yield return base.FourthThing();
-        while (G.run.countThings==4)
-        {
-            if (Random.Range(0, 100) < 20)
-            {
-                yield return GlitchChild(2);
-            }
-
-            yield return new WaitForSeconds(1f);
-        }
         yield return null;
     }
     
     protected override IEnumerator FifthThing()
     {
         yield return base.FifthThing();
-        if (Random.Range(0, 100) < 90)
-        {
-            EnableChildrenForIndex(1);
-        }
-        if (Random.Range(0, 100) < 40)
+        if (Random.Range(0, 100) < 80)
         {
             EnableChildrenForIndex(2);
         }

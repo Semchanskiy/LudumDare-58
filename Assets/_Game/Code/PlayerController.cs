@@ -1,14 +1,15 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 class PlayerController : SpriteChanger
 {
-
 	[SerializeField] float speed;
 	Vector2 direction;
 	Vector2 targetDirection;
 	[SerializeField] Rigidbody2D rb;
-	[SerializeField] Animator animator;
+	Animator[] animators;
+	private int _currentIndexAnim = 0;
 	[SerializeField] bool isHandsStageEnabled;
 	[SerializeField] SpriteRenderer shadowSprite;
 	[SerializeField] SpriteRenderer playerSprite;
@@ -16,6 +17,13 @@ class PlayerController : SpriteChanger
 	bool isEnableHandsSpawning;
 	bool isMovementEnabled = true;
 	private float StepTime = 0.25f;
+
+	protected override void Awake()
+	{
+		animators = GetComponentsInChildren<Animator>();
+		Debug.Log(animators.Length);
+		base.Awake();
+	}
 
 	protected override void Start()
 	{
@@ -28,6 +36,8 @@ class PlayerController : SpriteChanger
 				isHandsStageEnabled = stage >= 3;
 			};
 		}
+
+		
 	}
 
 	void OnTriggerEnter2D(Collider2D collider)
@@ -130,7 +140,7 @@ class PlayerController : SpriteChanger
 
 			if (targetDirection.sqrMagnitude > 0.01f)
 			{
-				animator.Play("PlayerWalk");
+				animators[_currentIndexAnim].Play("PlayerWalk");
 				if (targetDirection.x >= 0)
 				{
 					transform.localScale = new Vector3(-1, 1, 1);
@@ -147,7 +157,7 @@ class PlayerController : SpriteChanger
 			}
 			else
 			{
-				animator.Play("PlayerIdle");
+				animators[_currentIndexAnim].Play("PlayerIdle");
 				if (isHandsStageEnabled)
 				{
 					StarHandsTimer();
@@ -163,27 +173,39 @@ class PlayerController : SpriteChanger
 
     protected override IEnumerator FirstThing()
     {
+	    G.audio.PlaySFX("Overload");
+	    
         yield return null;
     }
     
     protected override IEnumerator SecondThing()
     {
+	    G.audio.PlaySFX("Overload");
+	    
         yield return null;
     }
     protected override IEnumerator ThirdThing()
     {
+	    G.audio.PlaySFX("Overload");
+	    _currentIndexAnim = 1;
+	    EnableChildrenForIndex(1);
         yield return null;
     }
     protected override IEnumerator FourthThing()
     {
+	    G.audio.PlaySFX("Overload");
         yield return null;
     }
     protected override IEnumerator FifthThing()
     {
+	    G.audio.PlaySFX("Overload");
+	    _currentIndexAnim = 2;
+	    EnableChildrenForIndex(2);
         yield return null;
     }
     protected override IEnumerator SixthThing()
     {
+	    G.audio.PlaySFX("Overload");
         yield return null;
     }
     

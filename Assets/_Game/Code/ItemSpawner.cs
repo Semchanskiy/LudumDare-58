@@ -19,7 +19,7 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField]private bool IsApplySpawnItem = false;
     
     [SerializeField]private float TimerToLastCollect = 0;
-    private float TimeToLastCollect = 5;
+    [SerializeField]private float TimeToLastCollect = 5;
     
     protected virtual void Start()
     {

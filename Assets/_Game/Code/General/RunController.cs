@@ -30,6 +30,9 @@ public class RunController : MonoBehaviour
         if (G.ui)
         {
             G.ui.menuPanel.FastClose();
+            G.ui.settingsPanel.FastClose();
+            G.ui.losePanel.FastClose();
+            G.ui.pausePanel.FastClose();
         }
     }
     void Start()

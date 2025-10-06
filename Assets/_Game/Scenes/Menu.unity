@@ -3908,6 +3908,9 @@ MonoBehaviour:
   - tag: Shepot
     clips:
     - {fileID: 8300000, guid: adefd4fe46d239545831d235e412fb36, type: 3}
+  - tag: Overload
+    clips:
+    - {fileID: 8300000, guid: 10b61360fa471cb49817c118454a5ef7, type: 3}
   MusicTaggedClips: []
 --- !u!1 &1062599017
 GameObject:
