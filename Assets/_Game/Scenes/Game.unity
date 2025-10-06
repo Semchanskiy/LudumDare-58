@@ -3933,10 +3933,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoryPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 7849935324351544870, guid: e1b215a9b1c862b4dbc43892bf2795fe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
