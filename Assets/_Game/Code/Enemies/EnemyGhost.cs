@@ -8,6 +8,8 @@ class EnemyGhost : MonoBehaviour
 	[SerializeField] float chargeSpeed;
 	[SerializeField] Animator animator;
 	[SerializeField] Rigidbody2D rb;
+	[SerializeField] SpriteRenderer body;
+	[SerializeField] Sprite spriteBodySmiling;
 	int mode;
 	float chargeTimer;
 	Vector2 targetPos;
@@ -16,8 +18,11 @@ class EnemyGhost : MonoBehaviour
 	{
 		targetPos = (Vector2)G.run.Player.transform.position;
 		Vector2 delta = targetPos - (Vector2)rb.transform.position;
-		
-		// play sound?
+	}
+
+	void StartSmiling()
+	{
+		body.sprite = spriteBodySmiling;
 	}
 
 	void FixedUpdate()
@@ -51,6 +56,7 @@ class EnemyGhost : MonoBehaviour
 
 		if (mode == 0 && delta.magnitude < 2.5f)
 		{
+			StartSmiling();
 			mode = 1;
 		}
 
