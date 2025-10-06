@@ -237,7 +237,7 @@ MonoBehaviour:
   ghostEnemyPrefab: {fileID: 8474229742481052335, guid: a7edd0c587b3f1449912ef917cd3a924, type: 3}
   handsEnemyPrefab: {fileID: 2057255797443079509, guid: 977e70060b6c4af40b44626e116d76a5, type: 3}
   meatEnemyPrefab: {fileID: 5465694015730241281, guid: 343cf3509f19c744bad90d00dea7177d, type: 3}
-  isGhostStageEnabled: 0
+  isGhostStageEnabled: 1
 --- !u!1 &24888097
 GameObject:
   m_ObjectHideFlags: 0

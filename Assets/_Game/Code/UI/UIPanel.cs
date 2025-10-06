@@ -48,4 +48,11 @@ public abstract class UIPanel : MonoBehaviour
         _panelRectTransform.DOKill();
         gameObject.SetActive(false);
     }
+    public void FastShow()
+    {
+        _panelRectTransform.DOKill();
+        gameObject.SetActive(true);
+        _panelRectTransform.DOScale(Vector3.one, 1f)
+            .From(Vector3.one);
+    }
 }

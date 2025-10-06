@@ -4,7 +4,6 @@ using UnityEngine;
 public class RunController : MonoBehaviour
 {
     [SerializeField] private AudioMusicBG _musicBg;
-    public Action OnTic;
     private float TicTime = 1f;
     private float Timer = 0f;
     public bool IsPlay = false;
@@ -34,6 +33,7 @@ public class RunController : MonoBehaviour
             G.ui.settingsPanel.FastClose();
             G.ui.losePanel.FastClose();
             G.ui.pausePanel.FastClose();
+            G.ui.winPanel.FastClose();
         }
     }
     void Start()
@@ -55,12 +55,6 @@ public class RunController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 G.ui.pausePanel.Show();
-            }
-            Timer += Time.deltaTime;
-            if (Timer >= TicTime)
-            {
-                Timer = 0;
-                OnTic?.Invoke();
             }
         }
     }

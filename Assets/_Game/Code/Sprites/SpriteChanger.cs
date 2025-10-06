@@ -25,9 +25,7 @@ public abstract class SpriteChanger : MonoBehaviour
 
     protected virtual void Start()
     {
-        
         EnableChildrenForIndex(0);
-        
         // G.run.OnTic += () =>
         // {
         //     G.run.OnTic += OnTicHandler;

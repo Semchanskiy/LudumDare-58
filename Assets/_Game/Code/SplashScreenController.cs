@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class SplashScreenController : MonoBehaviour
     [Header("Settings")]
     public float fadeDuration = 1.0f;
     public float delayBetweenFades = 0.5f;
+    [SerializeField] private String _nameNextNcene;
     
     [Header("Reference")]
     public Image panel;
@@ -31,7 +33,7 @@ public class SplashScreenController : MonoBehaviour
         yield return new WaitForSeconds(delayBetweenFades);
         
         yield return StartCoroutine(FadePanel(0f, 1f, fadeDuration));
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(_nameNextNcene);
     }
     
     IEnumerator FadePanel(float startAlpha, float endAlpha, float duration)

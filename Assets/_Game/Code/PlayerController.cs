@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 class PlayerController : SpriteChanger
 {
@@ -17,6 +18,7 @@ class PlayerController : SpriteChanger
 	bool isEnableHandsSpawning;
 	bool isMovementEnabled = true;
 	private float StepTime = 0.25f;
+	private bool IsLose = false;
 
 	protected override void Awake()
 	{
@@ -46,7 +48,7 @@ class PlayerController : SpriteChanger
 		if (collider.TryGetComponent(out EnemyGhost ghost))
 		{
 			isMovementEnabled = false;
-			StartCoroutine( GameOver());
+			StartCoroutine( GameOverScreemer());
 		}
 		else if (collider.TryGetComponent(out EnemyMeat meat))
 		{
@@ -211,6 +213,8 @@ class PlayerController : SpriteChanger
     
     protected override IEnumerator SeventhThing()
     {
+	    G.run.IsPlay = false;
+	    G.ui.winPanel.FastShow();
         yield return null;
     }
 
@@ -232,10 +236,28 @@ class PlayerController : SpriteChanger
 
     private IEnumerator GameOver()
     {
-	    
+	    if (IsLose)
+	    {
+		    yield break;
+	    }
+	    IsLose = true;
 	    yield return new WaitForSeconds(2f);
 	    //звук мяса
 	    G.ui.losePanel.Show();
+    }
+    private IEnumerator GameOverScreemer()
+    {
+	    if (IsLose)
+	    {
+		    yield break;
+	    }
+	    IsLose = true;
+	    G.audio.PlaySFX("Screemer");
+	    G.ui.screemerPanel.FastShow();
+	    yield return new WaitForSeconds(2f);
+	    G.ui.menuPanel.FastShow();
+	    SceneManager.LoadScene("Menu");
+
     }
 
 }

@@ -14,7 +14,10 @@ public class Main : MonoBehaviour
     public static Main Instance;
     void Awake()
     {
-        
+        if (G.ui != null)
+        {
+            G.ui.screemerPanel.FastClose();
+        }
         if (Instance == null)
         {
             Instance = this;

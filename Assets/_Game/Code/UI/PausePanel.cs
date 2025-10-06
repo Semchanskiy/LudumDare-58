@@ -23,6 +23,7 @@ public class PausePanel : UIPanel
         });
         _backButton.onClick.AddListener(() =>
         {
+            G.ui.menuPanel.FastShow();
             SceneManager.LoadScene("Menu");
         });
     }
@@ -43,6 +44,7 @@ public class PausePanel : UIPanel
         });
         _backButton.onClick.RemoveListener(() =>
         {
+            G.ui.menuPanel.FastShow();
             SceneManager.LoadScene("Menu");
         });
     }
