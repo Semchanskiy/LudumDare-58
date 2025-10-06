@@ -6,7 +6,7 @@ public class RunController : MonoBehaviour
     public Action OnTic;
     private float TicTime = 1f;
     private float Timer = 0f;
-    private bool IsPlay = false;
+    public bool IsPlay = false;
     
     public Action<int> OnChangeCountThings;
     private int _countThings;
@@ -39,12 +39,13 @@ public class RunController : MonoBehaviour
     
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.A))
-        // {
-        //     G.run.countThings ++;
-        // }
+         
         if (IsPlay)
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                G.ui.pausePanel.Show();
+            }
             Timer += Time.deltaTime;
             if (Timer >= TicTime)
             {

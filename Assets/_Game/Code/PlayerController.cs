@@ -32,6 +32,7 @@ class PlayerController : SpriteChanger
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
+		if (!G.run.IsPlay) return;
 		if (collider.TryGetComponent(out EnemyGhost ghost))
 		{
 			isMovementEnabled = false;
@@ -99,55 +100,60 @@ class PlayerController : SpriteChanger
 
 	void Update()
 	{
-		if (!isMovementEnabled)
-		{
-			direction = Vector2.zero;
-			return;
-		}
-		direction = new Vector2(
-			Input.GetAxisRaw("Horizontal"),
-			Input.GetAxisRaw("Vertical")
-		).normalized;
+		if (!G.run.IsPlay) return;
+			if (!isMovementEnabled)
+			{
+				direction = Vector2.zero;
+				return;
+			}
+			direction = new Vector2(
+				Input.GetAxisRaw("Horizontal"),
+				Input.GetAxisRaw("Vertical")
+			).normalized;
 	}
 
 	void LateUpdate()
 	{
+		if (!G.run.IsPlay) return;
 		shadowSprite.sortingOrder = playerSprite.sortingOrder - 1;
 	}
 
 	void FixedUpdate()
 	{
-		// с плавностью
-		targetDirection = Vector2.Lerp(targetDirection, direction, 0.3f);
-		rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * targetDirection);
+		if (!G.run.IsPlay) return;
+			// с плавностью
+			targetDirection = Vector2.Lerp(targetDirection, direction, 0.3f);
+			rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * targetDirection);
 
-		// без плавности
-		// rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * direction);
+			// без плавности
+			// rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * direction);
 
-		if (targetDirection.sqrMagnitude > 0.01f)
-		{
-			animator.Play("PlayerWalk");
-			if (targetDirection.x >= 0)
+			if (targetDirection.sqrMagnitude > 0.01f)
 			{
-				transform.localScale = new Vector3(-1, 1, 1);
+				animator.Play("PlayerWalk");
+				if (targetDirection.x >= 0)
+				{
+					transform.localScale = new Vector3(-1, 1, 1);
+				}
+				else
+				{
+					transform.localScale = new Vector3(1, 1, 1);
+				}
+
+				if (isHandsStageEnabled)
+				{
+					ClearHandsTimer();
+				}
 			}
 			else
 			{
-				transform.localScale = new Vector3(1, 1, 1);
+				animator.Play("PlayerIdle");
+				if (isHandsStageEnabled)
+				{
+					StarHandsTimer();
+				}
 			}
-			if (isHandsStageEnabled)
-			{
-				ClearHandsTimer();
-			}
-		}
-		else
-		{
-			animator.Play("PlayerIdle");
-			if (isHandsStageEnabled)
-			{
-				StarHandsTimer();
-			}
-		}
+		
 	}
 
 	protected override IEnumerator ZeroThing()
@@ -190,7 +196,7 @@ class PlayerController : SpriteChanger
     {
 	    while (StepTime>-5)
 	    {
-		    if (direction.sqrMagnitude > 0.01f)
+		    if (direction.sqrMagnitude > 0.01f && G.run.IsPlay)
 			{
 				if (G.audio)
 				{
@@ -200,6 +206,14 @@ class PlayerController : SpriteChanger
 			}
 		    yield return new WaitForSeconds(0.1f);
 	    }
+    }
+
+    private IEnumerator GameOver()
+    {
+	    
+	    yield return new WaitForSeconds(2f);
+	    //звук мяса
+	    G.ui.losePanel.Hide();
     }
 
 }

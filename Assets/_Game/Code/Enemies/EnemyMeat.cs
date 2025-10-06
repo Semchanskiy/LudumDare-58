@@ -8,6 +8,11 @@ class EnemyMeat : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		if (!G.run.IsPlay)
+		{
+			rb.linearVelocity = Vector2.zero; 
+			return;
+		}
 		Vector2 targetPos = (Vector2) G.run.Player.transform.position;
 		Vector2 delta = targetPos - (Vector2)rb.transform.position;
 		if (delta.sqrMagnitude > 1)

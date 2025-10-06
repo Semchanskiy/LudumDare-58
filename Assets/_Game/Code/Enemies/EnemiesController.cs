@@ -52,6 +52,8 @@ public class EnemiesController : MonoBehaviour
 
 	void Update()
 	{
+		if (!G.run.IsPlay) return;
+		
 		if (isGhostStageEnabled && !IsGhostEnemySpawned())
 		{
 			ghostSpawnTimer -= Time.deltaTime;

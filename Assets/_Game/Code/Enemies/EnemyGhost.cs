@@ -22,6 +22,11 @@ class EnemyGhost : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		if (!G.run.IsPlay)
+		{
+			rb.linearVelocity = Vector2.zero; 
+			return;
+		}
 		if (mode == 0 || mode == 1)
 		{ 
 			targetPos = (Vector2)G.run.Player.transform.position;

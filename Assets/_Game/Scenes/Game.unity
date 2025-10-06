@@ -180,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20843565}
   - component: {fileID: 20843566}
+  - component: {fileID: 20843567}
   m_Layer: 0
   m_Name: RunController
   m_TagString: Untagged
@@ -214,7 +215,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28045ccac6f2cb48a722f086122ee14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlay: 0
   Player: {fileID: 1135692833}
+--- !u!114 &20843567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20843564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7954fa3929a90e14b91e656d983b5c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostEnemyPrefab: {fileID: 8474229742481052335, guid: a7edd0c587b3f1449912ef917cd3a924, type: 3}
+  handsEnemyPrefab: {fileID: 2057255797443079509, guid: 977e70060b6c4af40b44626e116d76a5, type: 3}
+  meatEnemyPrefab: {fileID: 5465694015730241281, guid: 343cf3509f19c744bad90d00dea7177d, type: 3}
+  isGhostStageEnabled: 0
 --- !u!1 &24888097
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,11 +1004,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 960, y: 600}
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1336,6 +1354,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420036}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1503,12 +1522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483838e1fd9b9ba4794d4cc125a15ccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 0.05
-  maxTime: 0.2
-  minDistance: 1
-  maxDistance: 1
-  scaleRange: {x: 1, y: 1}
-  alphaRange: {x: 1, y: 1}
+  Time: 0.1
+  scaleRange: {x: 0.5, y: 5}
+  alphaRange: {x: 0.5, y: 1}
   pool:
   - {fileID: 1410121072}
   - {fileID: 678208391}
@@ -1541,10 +1557,9 @@ MonoBehaviour:
   - {fileID: 1990564763}
   - {fileID: 1007065406}
   poolSprite:
-  - {fileID: 21300000, guid: 561edce940ef29d409c4ae873f54e034, type: 3}
-  - {fileID: 21300000, guid: b8b812180eb705f468108c1bf20f34a9, type: 3}
-  - {fileID: 21300000, guid: dda69ae573fed7b4d84443bff88dd02a, type: 3}
-  - {fileID: 21300000, guid: cab8cac676fe8914185ab5bbbf7878b2, type: 3}
+  - {fileID: 21300000, guid: fb51021959d71f14ea9e5b287bc2ff51, type: 3}
+  - {fileID: 21300000, guid: b34edc9c3af14a8439dd957853ceea55, type: 3}
+  - {fileID: 21300000, guid: ce65b0b81b5247448a71c3dbf1946d35, type: 3}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,6 +1602,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc7c45a9e30cbb4ca48e54c7e064bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDuration: 0.5
+  defaultMagnitude: 0.1
 --- !u!1 &553967930
 GameObject:
   m_ObjectHideFlags: 0

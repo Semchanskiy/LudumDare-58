@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
     public GameObject SelectLevelPanel;
     public GameObject LiderboardPanel;
     public GameObject WinPanel;
-    public GameObject LosePanel;
+    public UIPanel losePanel;
     //public GamePanel GamePanel;
     
     private static UI _instance;
