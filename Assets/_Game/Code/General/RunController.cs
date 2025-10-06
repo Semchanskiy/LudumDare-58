@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RunController : MonoBehaviour
 {
+    [SerializeField] private AudioMusicBG _musicBg;
     public Action OnTic;
     private float TicTime = 1f;
     private float Timer = 0f;
@@ -37,7 +38,13 @@ public class RunController : MonoBehaviour
     }
     void Start()
     {
-        // IsPlay = true;
+        
+    }
+
+    public void StartGame()
+    {
+        IsPlay = true;
+        _musicBg.StartMusic();
     }
     
     void Update()

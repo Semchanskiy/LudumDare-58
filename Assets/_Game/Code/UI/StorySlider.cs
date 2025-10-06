@@ -48,7 +48,7 @@ class StorySlider : MonoBehaviour
 		}
 		Destroy(lastSlide.transform.parent.GetComponent<Image>());
 
-		G.run.IsPlay = true;
+		G.run.StartGame();
 
 		elapsed = 0f;
 		while (elapsed < fadeDuration)
