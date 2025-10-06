@@ -36,11 +36,11 @@ public class ForestTree : SpriteChanger
     protected override IEnumerator ThirdThing()
     {
         yield return base.ThirdThing();
-        if (Random.Range(0, 100) < 50)
+        if (Random.Range(0, 100) < 100)
         {
             EnableChildrenForIndex(1);
         }
-        if (Random.Range(0, 100) < 15)
+        if (Random.Range(0, 100) < 40)
         {
             EnableChildrenForIndex(2);
         }
@@ -63,7 +63,7 @@ public class ForestTree : SpriteChanger
         yield return base.FourthThing();
         while (G.run.countThings==4)
         {
-            if (Random.Range(0, 100) < 5)
+            if (Random.Range(0, 100) < 10)
             {
                 yield return GlitchChild(3);
             }
@@ -76,15 +76,11 @@ public class ForestTree : SpriteChanger
     protected override IEnumerator FifthThing()
     {
         yield return base.FifthThing();
-        if (Random.Range(0, 100) < 90)
-        {
-            EnableChildrenForIndex(1);
-        }
-        if (Random.Range(0, 100) < 75)
+        if (Random.Range(0, 100) < 100)
         {
             EnableChildrenForIndex(2);
         }
-        if (Random.Range(0, 100) < 14)
+        if (Random.Range(0, 100) < 50)
         {
             EnableChildrenForIndex(3);
         }
@@ -104,18 +100,14 @@ public class ForestTree : SpriteChanger
     protected override IEnumerator SixthThing()
     {
         yield return base.SixthThing();
-        if (Random.Range(0, 100) < 100)
-        {
-            EnableChildrenForIndex(2);
-        }
-        if (Random.Range(0, 100) < 35)
+        if (Random.Range(0, 100) < 70)
         {
             EnableChildrenForIndex(3);
         }
         
-        while (G.run.countThings==5)
+        while (G.run.countThings==6)
         {
-            if (Random.Range(0, 100) < 40)
+            if (Random.Range(0, 100) < 50)
             {
                 yield return GlitchChild(3);
             }

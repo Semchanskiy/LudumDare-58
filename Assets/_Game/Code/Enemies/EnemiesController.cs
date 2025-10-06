@@ -25,22 +25,22 @@ public class EnemiesController : MonoBehaviour
 				isGhostStageEnabled = stage >= 4;
 				// isMeatStageEnabled = stage >= 2;
 
-				if (stage == 2)
+				if (stage == 4)
 				{
 					CreateEnemyMeat();
 				}
 
 				if (stage == 4)
 				{
-					ghostSpawnFrequency = 25f;
+					ghostSpawnFrequency = 15f;
 				}
 				else if (stage == 5)
 				{
-					ghostSpawnFrequency = 20f;
+					ghostSpawnFrequency = 10f;
 				}
 				else if (stage == 6)
 				{
-					ghostSpawnFrequency = 20f;
+					ghostSpawnFrequency = 5f;
 				}
 				else // stage == 7
 				{

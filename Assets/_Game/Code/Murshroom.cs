@@ -1,48 +1,61 @@
 using System.Collections;
 using UnityEngine;
 
-public class Flovers : SpriteChanger
+public class Murshroom : SpriteChanger
 {
-    
     protected override IEnumerator FirstThing()
     {
         yield return base.FirstThing();
-        if (Random.Range(0, 100) < 10)
+        if (Random.Range(0, 100) < 20)
         {
             EnableChildrenForIndex(1);
         }
+
         yield return null;
     }
     protected override IEnumerator SecondThing()
     {
         yield return base.SecondThing();
-        if (Random.Range(0, 100) < 20)
+        if (Random.Range(0, 100) < 30)
         {
             EnableChildrenForIndex(1);
         }
+
         yield return null;
     }
     
     protected override IEnumerator ThirdThing()
     {
         yield return base.ThirdThing();
-        if (Random.Range(0, 100) < 100)
+        if (Random.Range(0, 100) < 50)
         {
             EnableChildrenForIndex(1);
         }
-        if (Random.Range(0, 100) < 20)
+
+        while (G.run.countThings==3)
         {
-            EnableChildrenForIndex(2);
+            if (Random.Range(0, 100) < 5)
+            {
+                yield return GlitchChild(2);
+            }
+
+            yield return new WaitForSeconds(1f);
         }
+
         yield return null;
     }
     
     protected override IEnumerator FourthThing()
     {
         yield return base.FourthThing();
-        if (Random.Range(0, 100) < 30)
+        while (G.run.countThings==4)
         {
-            EnableChildrenForIndex(2);
+            if (Random.Range(0, 100) < 20)
+            {
+                yield return GlitchChild(2);
+            }
+
+            yield return new WaitForSeconds(1f);
         }
         yield return null;
     }
@@ -50,6 +63,19 @@ public class Flovers : SpriteChanger
     protected override IEnumerator FifthThing()
     {
         yield return base.FifthThing();
+        if (Random.Range(0, 100) < 90)
+        {
+            EnableChildrenForIndex(1);
+        }
+        if (Random.Range(0, 100) < 40)
+        {
+            EnableChildrenForIndex(2);
+        }
+        yield return null;
+    }
+    protected override IEnumerator SixthThing()
+    {
+        yield return base.SixthThing();
         if (Random.Range(0, 100) < 100)
         {
             EnableChildrenForIndex(2);

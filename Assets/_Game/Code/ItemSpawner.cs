@@ -7,6 +7,7 @@ public class ItemSpawner : MonoBehaviour
     [Header("Настройки спавна")]
     public List<GameObject> objectPrefabs;
     public float destroyDistance = 10f;
+    private bool IsFinish = false;
     
     [Header("Ссылки")]
     public Transform player;
@@ -114,12 +115,13 @@ public class ItemSpawner : MonoBehaviour
     
     protected virtual IEnumerator SeventhThing()
     {
-        //
+        IsFinish = true;
         yield return null;
     }
     
     void Update()
     {
+        if(IsFinish) return;
         if (TimerToLastCollect > 0 && IsApplySpawnItem == false) 
         {
             TimerToLastCollect -= Time.deltaTime;

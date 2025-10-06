@@ -1,10 +1,16 @@
+using System;
 using UnityEngine;
 
 class EnemyMeat : MonoBehaviour
 {
-
+	private AudioSource _audioSource;
 	[SerializeField] float speed;
 	[SerializeField] Rigidbody2D rb;
+
+	private void Start()
+	{
+		_audioSource = GetComponent<AudioSource>();
+	}
 
 	void FixedUpdate()
 	{
@@ -20,6 +26,12 @@ class EnemyMeat : MonoBehaviour
 			delta = delta.normalized;
 		}
 		rb.linearVelocity = delta * speed;
+		
+		float distance = Vector3.Distance(transform.position, G.run.Player.transform.position);
+		float normalizedDistance = Mathf.Clamp01(distance / 10);
+		float proximityFactor = 1f - normalizedDistance;
+		
+		_audioSource.volume = Mathf.Lerp(0f, 1f, proximityFactor);
 	}
 
 }

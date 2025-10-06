@@ -36,12 +36,12 @@ class PlayerController : SpriteChanger
 		if (collider.TryGetComponent(out EnemyGhost ghost))
 		{
 			isMovementEnabled = false;
-			Debug.Log("Game over in 2 sec");
+			GameOver();
 		}
 		else if (collider.TryGetComponent(out EnemyMeat meat))
 		{
 			isMovementEnabled = false;
-			Debug.Log("Game over in 2 sec");
+			GameOver();
 		}
 		else if (collider.TryGetComponent(out Item item))
 		{
@@ -53,7 +53,7 @@ class PlayerController : SpriteChanger
 	public void CatchByHands()
 	{
 		isMovementEnabled = false;
-		Debug.Log("Game over in 2 sec");
+		GameOver();
 	}
 
 	IEnumerator EnableHandsEnemyTimer()
@@ -213,7 +213,7 @@ class PlayerController : SpriteChanger
 	    
 	    yield return new WaitForSeconds(2f);
 	    //звук мяса
-	    G.ui.losePanel.Hide();
+	    G.ui.losePanel.Show();
     }
 
 }
