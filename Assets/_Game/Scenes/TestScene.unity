@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28045ccac6f2cb48a722f086122ee14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlay: 1
   Player: {fileID: 602502955}
 --- !u!4 &413160270
 Transform:
