@@ -34,7 +34,7 @@ public class RunController : MonoBehaviour
     }
     void Start()
     {
-        IsPlay = true;
+        // IsPlay = true;
     }
     
     void Update()

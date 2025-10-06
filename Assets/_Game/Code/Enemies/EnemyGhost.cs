@@ -33,6 +33,13 @@ class EnemyGhost : MonoBehaviour
 		}
 
 		Vector2 delta = targetPos - (Vector2) rb.transform.position;
+
+		if (delta.magnitude > 10f)
+		{
+			Destroy(gameObject);
+			return;
+		}
+
 		if (delta.x >= 0)
 		{
 			transform.localScale = new Vector3(-Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
