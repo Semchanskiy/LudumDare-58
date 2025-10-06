@@ -42,7 +42,7 @@ public class PlayerData : MonoBehaviour
         
         musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         SFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
-        SettingsPanel.SetMixerVolume("Music", _musicVolume);
+        SettingsPanel.SetMixerVolume("Music", _musicVolume);    
         SettingsPanel.SetMixerVolume("SFX", _SFXVolume);
         
         // float volume = Mathf.Lerp(-80f, 0f, SFXVolume);

@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3734131fb0afa4caa1ae18bcd18782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   rb: {fileID: 5675403117262720724}
   animator: {fileID: 8305781463520618087}
   isHandsStageEnabled: 0

@@ -36,12 +36,12 @@ class PlayerController : SpriteChanger
 		if (collider.TryGetComponent(out EnemyGhost ghost))
 		{
 			isMovementEnabled = false;
-			GameOver();
+			StartCoroutine( GameOver());
 		}
 		else if (collider.TryGetComponent(out EnemyMeat meat))
 		{
 			isMovementEnabled = false;
-			GameOver();
+			StartCoroutine( GameOver());
 		}
 		else if (collider.TryGetComponent(out Item item))
 		{
@@ -53,7 +53,7 @@ class PlayerController : SpriteChanger
 	public void CatchByHands()
 	{
 		isMovementEnabled = false;
-		GameOver();
+		StartCoroutine( GameOver());
 	}
 
 	IEnumerator EnableHandsEnemyTimer()

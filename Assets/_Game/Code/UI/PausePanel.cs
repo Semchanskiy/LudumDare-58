@@ -6,6 +6,8 @@ public class PausePanel : UIPanel
     [SerializeField] private Button _backButton;
     private void OnEnable()
     {
+        SettingsPanel.SetMixerVolume("Music", -60f);
+        SettingsPanel.SetMixerVolume("SFX", -60f);
         //Time.timeScale = 0;
         G.run.IsPlay = false;
         _backButton.onClick.AddListener(() =>
@@ -17,6 +19,8 @@ public class PausePanel : UIPanel
     
     private void OnDisable()
     {
+        SettingsPanel.SetMixerVolume("Music", G.playerData.musicVolume);
+        SettingsPanel.SetMixerVolume("SFX", G.playerData.SFXVolume);
         //Time.timeScale = 1;
         G.run.IsPlay = true;
         _backButton.onClick.RemoveListener(() =>

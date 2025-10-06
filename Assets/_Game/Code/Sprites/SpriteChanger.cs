@@ -129,7 +129,7 @@ public abstract class SpriteChanger : MonoBehaviour
     
     protected virtual IEnumerator SeventhThing()
     {
-        yield return RandomGlitch(4);
+        yield return null;
     }
 
     protected virtual IEnumerator GlitchChild(int index, float time = 0.15f)
