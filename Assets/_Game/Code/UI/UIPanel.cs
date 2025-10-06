@@ -19,7 +19,7 @@ public abstract class UIPanel : MonoBehaviour
     }
 
 
-    public void Show()
+    public void Show(float duration = 0.3f)
     {
         _panelRectTransform.DOKill();
         gameObject.SetActive(true);

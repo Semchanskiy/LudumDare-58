@@ -25,7 +25,7 @@ public class EnemiesController : MonoBehaviour
 				isGhostStageEnabled = stage >= 4;
 				// isMeatStageEnabled = stage >= 2;
 
-				if (stage == 4)
+				if (stage == 3)
 				{
 					CreateEnemyMeat();
 				}
@@ -106,6 +106,7 @@ public class EnemiesController : MonoBehaviour
 		}
 		Vector2 playerPos = G.run.Player.transform.position;
 		handsEnemy = Instantiate(handsEnemyPrefab, playerPos, Quaternion.identity);
+		G.audio.PlaySFX("Hands");
 	}
 
 	public void CreateEnemyMeat()

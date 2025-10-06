@@ -47,9 +47,6 @@ public class Main : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("SplashScreen");
-        }
+       
     }
 }

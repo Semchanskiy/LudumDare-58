@@ -70,7 +70,7 @@ class PlayerController : SpriteChanger
 
 	IEnumerator EnableHandsEnemyTimer()
 	{
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(3f);
 		isEnableHandsSpawning = true;
 		handsEnemyTimer = null;
 	}
@@ -175,46 +175,47 @@ class PlayerController : SpriteChanger
 
     protected override IEnumerator FirstThing()
     {
-	    G.audio.PlaySFX("Overload");
+	    G.audio.PlaySFX("Overload",0.2f);
 	    
         yield return null;
     }
     
     protected override IEnumerator SecondThing()
     {
-	    G.audio.PlaySFX("Overload");
+	    G.audio.PlaySFX("Overload",0.3f);
 	    
         yield return null;
     }
     protected override IEnumerator ThirdThing()
     {
-	    G.audio.PlaySFX("Overload");
+	    G.audio.PlaySFX("Overload",0.3f);
 	    _currentIndexAnim = 1;
 	    EnableChildrenForIndex(1);
         yield return null;
     }
     protected override IEnumerator FourthThing()
     {
-	    G.audio.PlaySFX("Overload");
+	    G.audio.PlaySFX("Overload",0.4f);
         yield return null;
     }
     protected override IEnumerator FifthThing()
     {
-	    G.audio.PlaySFX("Overload");
+	    G.audio.PlaySFX("Overload",0.5f);
 	    _currentIndexAnim = 2;
 	    EnableChildrenForIndex(2);
         yield return null;
     }
     protected override IEnumerator SixthThing()
     {
-	    G.audio.PlaySFX("Overload");
+	    G.audio.PlaySFX("Overload",0.5f);
         yield return null;
     }
     
     protected override IEnumerator SeventhThing()
     {
 	    G.run.IsPlay = false;
-	    G.ui.winPanel.FastShow();
+	    G.ui.menuPanel.Show(10f);
+	    SceneManager.LoadScene("WinScene");
         yield return null;
     }
 
