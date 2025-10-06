@@ -7,9 +7,6 @@ public class UI : MonoBehaviour
     public UIPanel menuPanel;
     public UIPanel settingsPanel;
     public UIPanel pausePanel;
-    public GameObject SelectLevelPanel;
-    public GameObject LiderboardPanel;
-    public GameObject WinPanel;
     public UIPanel losePanel;
     //public GamePanel GamePanel;
     
