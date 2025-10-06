@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 883c53743e088524c82ed750418d946b
+guid: 6415b998277970b4e90f19efddacdc4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9001067410632735153
-    second: StoryScreen3_0
+      213: -8441055519606984041
+    second: GhostScreamer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StoryScreen3_0
+      name: GhostScreamer_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 960
-        height: 600
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4604e531e8c51380800000000000000
-      internalID: -9001067410632735153
+      spriteID: 792b9704ab85bda80800000000000000
+      internalID: -8441055519606984041
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StoryScreen3_0: -9001067410632735153
+      GhostScreamer_0: -8441055519606984041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

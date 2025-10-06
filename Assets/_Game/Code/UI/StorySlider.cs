@@ -8,7 +8,8 @@ class StorySlider : MonoBehaviour
 
 	List<Image> slides = new();
 	[SerializeField] float fadeDuration = 0.5f;
-	[SerializeField] float slideDuration = 2f;
+	int currentIndex = 0;
+	bool isClickLocked = false;
 
 	[SerializeField] GameObject slide1;
 	[SerializeField] GameObject slide2;
@@ -21,26 +22,45 @@ class StorySlider : MonoBehaviour
 		slides.Add(slide2.GetComponent<Image>());
 		slides.Add(slide3.GetComponent<Image>());
 		slides.Add(slide4.GetComponent<Image>());
-		StartCoroutine(PlaySlides());
+		StartCoroutine(PlayNextSlide());
 	}
 
-	private IEnumerator PlaySlides()
+	public void NextSlide()
 	{
-		float elapsed;
-		foreach (Image slide in slides)
+		if (isClickLocked)
 		{
-			elapsed = 0f;
-			while (elapsed < fadeDuration)
-			{
-				elapsed += Time.deltaTime;
-				float t = elapsed / fadeDuration;
-				slide.color = new Color(1, 1, 1, t);
-				yield return null;
-			}
-
-			yield return new WaitForSeconds(slideDuration);
+			return;
 		}
 
+		if (currentIndex >= slides.Count)
+		{
+			StartCoroutine(HideSlides());
+		}
+		else
+		{
+			StartCoroutine(PlayNextSlide());
+		}
+	}
+
+	private IEnumerator PlayNextSlide()
+	{
+		isClickLocked = true;
+		Image slide = slides[currentIndex];
+		float elapsed = 0f;
+		while (elapsed < fadeDuration)
+		{
+			elapsed += Time.deltaTime;
+			float t = elapsed / fadeDuration;
+			slide.color = new Color(1, 1, 1, t);
+			yield return null;
+		}
+		currentIndex++;
+		isClickLocked = false;
+	}
+
+	private IEnumerator HideSlides()
+	{
+		isClickLocked = true;
 		Image lastSlide = slides[slides.Count - 1];
 		for (int i = 0; i < slides.Count - 1; i++)
 		{
@@ -50,7 +70,7 @@ class StorySlider : MonoBehaviour
 
 		G.run.StartGame();
 
-		elapsed = 0f;
+		float elapsed = 0f;
 		while (elapsed < fadeDuration)
 		{
 			elapsed += Time.deltaTime;
